@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>COSTLY v12 Revisi</title>
+<style>
+:root{--navy:#17324d;--blue:#2f6f9f;--bg:#f5f7f8;--card:#fff;--line:#dce3e8;--muted:#6d7b86;--green:#3f8064;--amber:#a8752f;--red:#b65b5b}
+*{box-sizing:border-box}body{margin:0;font:14px system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:#253746}
+button,input,select{font:inherit}.screen{min-height:100vh}.hidden{display:none!important}
+.landing{background:linear-gradient(135deg,#17324d 0%,#28597d 60%,#eaf3f8 60%);color:#fff;padding:28px 7vw}
+.lnav{display:flex;justify-content:space-between;align-items:center}.brand{font-size:28px;font-weight:800}.small{font-size:12px;color:#a9bfce}
+.hero{max-width:800px;padding:110px 0 100px}.hero h1{font-size:48px;line-height:1.05;margin:0 0 18px}.hero p{font-size:17px;line-height:1.7;max-width:650px;color:#e5eef4}
+.cta{border:0;border-radius:8px;padding:12px 18px;background:#fff;color:var(--navy);font-weight:700;cursor:pointer;margin-right:8px}.cta.alt{background:#315f7d;color:#fff;border:1px solid #6e91a8}
+.auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:25px;background:#eef3f6}.authbox{width:min(430px,100%);background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 15px 45px #17324d18}.authbox h1{margin:0;color:var(--navy)}.authbox p{color:var(--muted);font-size:13px}.tabs{display:flex;gap:5px;background:#f1f4f6;padding:4px;border-radius:8px;margin:18px 0}.tabs button{flex:1;border:0;padding:9px;border-radius:6px;background:transparent;color:var(--muted);cursor:pointer}.tabs button.active{background:#fff;color:var(--navy);box-shadow:0 1px 5px #17324d15}
+.app{display:flex;min-height:100vh}.side{position:fixed;left:0;top:0;bottom:0;width:245px;background:var(--navy);color:#fff;padding:22px 14px;overflow:auto}.logo{font-size:25px;font-weight:800;margin:0 10px}.tag{font-size:10px;color:#a9bfce;margin:2px 10px 24px}.grp{font-size:10px;color:#8fa9bc;text-transform:uppercase;letter-spacing:1px;margin:18px 10px 7px}.nav button{display:block;width:100%;border:0;background:transparent;color:#dbe6ee;text-align:left;padding:11px;border-radius:8px;margin:3px 0;cursor:pointer}.nav button.active,.nav button:hover{background:#294a64;color:#fff}
+.main{margin-left:245px;width:calc(100% - 245px);padding:28px 34px 50px;max-width:1450px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.top h1{margin:0;color:var(--navy);font-size:27px}.top p{margin:5px 0;color:var(--muted);font-size:13px}.pill{background:#eaf3f8;color:var(--blue);padding:7px 10px;border-radius:20px;font-size:12px}
+.grid{display:grid;gap:15px}.kpi{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1.35fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 5px 18px #17324d12}.label{font-size:12px;color:var(--muted)}.value{font-size:24px;font-weight:750;color:var(--navy);margin-top:5px}.sub{font-size:11px;color:var(--muted);margin-top:4px}.section{margin-top:16px}.notice{background:#f0f6f9;border:1px solid #d7e7ef;border-radius:8px;padding:12px;font-size:12px;line-height:1.5}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}.field input,.field select{width:100%;padding:10px;border:1px solid var(--line);border-radius:7px;background:#fff}.btn{border:0;border-radius:7px;padding:10px 15px;margin-top:12px;background:var(--navy);color:#fff;cursor:pointer}.btn.secondary{background:#edf2f5;color:var(--navy)}.btn.danger{background:#fbeeee;color:var(--red);padding:6px 9px;margin:0}
+.material-row{display:grid;grid-template-columns:1.3fr .7fr .7fr .7fr auto;gap:8px;align-items:end;margin:8px 0}.material-row input{width:100%;padding:9px;border:1px solid var(--line);border-radius:7px}.addline{margin-top:8px}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:9px 7px;border-bottom:1px solid #edf0f2;text-align:left}th{color:var(--muted)}.ok{color:var(--green);background:#edf7f1;padding:4px 7px;border-radius:12px}.warn{color:var(--amber);background:#fff5e6;padding:4px 7px;border-radius:12px}.dangerTag{color:var(--red);background:#fbeeee;padding:4px 7px;border-radius:12px}
+.chart{height:245px}.chart svg{width:100%;height:100%}.empty{text-align:center;padding:28px;color:var(--muted)}
+@media(max-width:900px){.side{width:70px;padding:18px 8px}.logo{font-size:18px}.tag,.grp,.nav span{display:none}.nav button{text-align:center}.main{margin-left:70px;width:calc(100% - 70px);padding:20px}.kpi,.two,.three,.form{grid-template-columns:1fr}.material-row{grid-template-columns:1fr 1fr}.hero h1{font-size:38px}}
+</style>
+</head>
+<body>
+
+<section id="landing" class="screen landing">
+  <div class="lnav"><div><div class="brand">COSTLY</div><div class="small">Control Cost & Reduce Waste</div></div><button class="cta alt" onclick="showAuth('login')">Masuk</button></div>
+  <div class="hero">
+    <h1>Kelola biaya produksi dan kurangi pemborosan dengan lebih sederhana.</h1>
+    <p>COSTLY membantu UMKM melihat biaya produksi, penggunaan energi, produk reject, produk tidak terjual, revenue, hingga forecast penjualan dalam satu alur yang saling terhubung.</p>
+    <button class="cta" onclick="showAuth('register')">Mulai dengan COSTLY</button>
+    <button class="cta alt" onclick="showAuth('login')">Saya sudah punya akun</button>
+  </div>
+</section>
+
+<section id="auth" class="screen auth hidden">
+ <div class="authbox">
+  <div class="brand">COSTLY</div><p>Masuk atau buat akun untuk mengelola data usaha.</p>
+  <div class="tabs"><button id="tabLogin" class="active" onclick="showAuth('login')">Login</button><button id="tabRegister" onclick="showAuth('register')">Daftar</button></div>
+  <div id="loginForm">
+   <div class="field"><label>Email</label><input id="loginEmail" placeholder="nama@email.com"></div>
+   <div class="field section"><label>Password</label><input type="password" placeholder="••••••••"></div>
+   <button class="btn" style="width:100%" onclick="enterApp()">Masuk ke COSTLY</button>
+  </div>
+  <div id="registerForm" class="hidden">
+   <div class="field"><label>Nama pemilik/usaha</label><input placeholder="Contoh: Budi Tahu Makmur"></div>
+   <div class="field section"><label>Email</label><input placeholder="nama@email.com"></div>
+   <div class="field section"><label>Password</label><input type="password" placeholder="••••••••"></div>
+   <button class="btn" style="width:100%" onclick="enterApp()">Buat akun & masuk</button>
+  </div>
+  <button class="btn secondary" style="width:100%" onclick="showLanding()">← Kembali</button>
+ </div>
+</section>
+
+<section id="app" class="screen hidden">
+<div class="app">
+<aside class="side">
+<div class="logo">COSTLY</div><div class="tag">Control Cost & Reduce Waste</div>
+<div class="grp">Utama</div><div class="nav">
+<button class="active" data-page="dashboard">▣ <span>Dashboard</span></button>
+<button data-page="biaya">1. <span>Biaya Produksi Aktual</span></button>
+<button data-page="energi">2. <span>Penggunaan Energi</span></button>
+<button data-page="penjualan">3. <span>Penjualan</span></button>
+<button data-page="revenue">4. <span>Revenue</span></button>
+<button data-page="bocor">5. <span>Biaya Bocor</span></button>
+<button data-page="forecast">6. <span>Detail Forecast</span></button>
+<button data-page="rekomendasi">7. <span>Rekomendasi</span></button>
+<button data-page="simulasi">8. <span>Simulasi</span></button>
+</div>
+<div class="grp">Akun</div><div class="nav"><button onclick="showLanding()">↩ <span>Keluar</span></button></div>
+</aside>
+<main class="main" id="main"></main>
+</div>
+</section>
+
+<script>
+const S={
+period:"September 2026",product:"Tahu",target:300,actual:290,reject:10,sold:250,price:4000,
+materials:[{name:"Kedelai",qty:50,unit:"kg",price:20000},{name:"Air",qty:1,unit:"paket",price:10000}],
+packaging:[{name:"Plastik kemasan",qty:100,unit:"pcs",price:100}],
+rejectCost:20000,
+energy:[
+ {source:"Listrik",activity:"Mesin produksi",qty:120,unit:"kWh",rate:1500},
+ {source:"Kayu bakar",activity:"Perebusan",qty:5,unit:"ikat",rate:8000}],
+sales:[270,250,260,250],
+production:[{period:"September 2026",product:"Tahu",target:300,actual:290,reject:10,cause:"Kualitas tidak sesuai"},
+{period:"Agustus 2026",product:"Tahu",target:300,actual:285,reject:15,cause:"Produk rusak"}]
+};
+const rp=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
+const matCost=()=>S.materials.reduce((a,x)=>a+x.qty*x.price,0);
+const packCost=()=>S.packaging.reduce((a,x)=>a+x.qty*x.price,0);
+const energyCost=()=>S.energy.reduce((a,x)=>a+x.qty*x.rate,0);
+const productionCost=()=>matCost()+packCost()+energyCost()+S.rejectCost;
+const good=()=>Math.max(0,S.actual-S.reject);
+const unsold=()=>Math.max(0,good()-S.sold);
+const revShould=()=>S.target*S.price, revActual=()=>S.sold*S.price, revGap=()=>Math.max(0,revShould()-revActual);
+const forecast=()=>Math.round(S.sales.reduce((a,b)=>a+b,0)/S.sales.length);
+
+function showLanding(){landing.classList.remove("hidden");auth.classList.add("hidden");app.classList.add("hidden")}
+function showAuth(mode){landing.classList.add("hidden");auth.classList.remove("hidden");app.classList.add("hidden");loginForm.classList.toggle("hidden",mode!=="login");registerForm.classList.toggle("hidden",mode!=="register");tabLogin.classList.toggle("active",mode==="login");tabRegister.classList.toggle("active",mode==="register")}
+function enterApp(){landing.classList.add("hidden");auth.classList.add("hidden");app.classList.remove("hidden");render("dashboard")}
+function head(t,d){return `<div class="top"><div><h1>${t}</h1><p>${d}</p></div><span class="pill">Data terhubung • ${S.period}</span></div>`}
+
+function chart(){
+ let a=S.sales,f=forecast(),max=Math.max(...a,f),min=Math.min(...a,f),den=max-min||1;
+ let pts=a.map((v,i)=>`${45+i*88},${205-(v-min)/den*145}`).join(" "),fx=45+a.length*88,fy=205-(f-min)/den*145;
+ return `<div class="chart"><svg viewBox="0 0 430 230"><line x1="30" y1="205" x2="420" y2="205" stroke="#dce3e8"/><polyline points="${pts}" fill="none" stroke="#2f6f9f" stroke-width="4"/><polyline points="${pts} ${fx},${fy}" fill="none" stroke="#94a5b1" stroke-width="3" stroke-dasharray="7 6"/>${a.map((v,i)=>`<text x="${45+i*88}" y="${188-(v-min)/den*145}" text-anchor="middle" font-size="10" fill="#17324d">${v}</text>`).join("")}<text x="${fx}" y="${fy-8}" text-anchor="middle" font-size="10" fill="#6d7b86">${f}</text></svg></div><div class="sub">Aktual ━━━ &nbsp; Forecast - - - &nbsp; • angka pasti ditampilkan</div>`;
+}
+
+function dashboard(){return head("Dashboard","Semua ringkasan mengambil data dari menu input tanpa penginputan ulang.")
++`<div class="grid kpi">
+<div class="card"><div class="label">Biaya Produksi Aktual</div><div class="value">${rp(productionCost())}</div><div class="sub">material + kemasan + energi + reject</div></div>
+<div class="card"><div class="label">Biaya Bocor</div><div class="value">${rp(productionCost())}</div><div class="sub">kebocoran yang tercatat</div></div>
+<div class="card"><div class="label">Revenue Seharusnya</div><div class="value">${rp(revShould())}</div><div class="sub">target × harga jual</div></div>
+<div class="card"><div class="label">Revenue Aktual</div><div class="value">${rp(revActual())}</div><div class="sub">terjual × harga jual</div></div></div>
+<div class="grid two section"><div class="card"><h2>Histori Penjualan & Forecast</h2>${chart()}<div class="notice">Forecast periode berikutnya: <b>${forecast()} pcs</b>.</div></div>
+<div class="card"><h2>Ringkasan Produk</h2><table><tr><th>Target</th><th>Aktual</th><th>Reject</th><th>Layak Jual</th></tr><tr><td>${S.target}</td><td>${S.actual}</td><td>${S.reject}</td><td>${good()}</td></tr></table>
+<div class="section"><div class="label">Revenue Gap</div><div class="value">${rp(revGap())}</div></div><div class="section"><div class="label">Tidak Terjual</div><div class="value">${unsold()} pcs</div><div class="sub">Bukan product reject</div></div></div></div>
+<div class="grid three section"><div class="card"><div class="label">Material</div><div class="value">${rp(matCost())}</div></div><div class="card"><div class="label">Energi</div><div class="value">${rp(energyCost())}</div></div><div class="card"><div class="label">Kemasan</div><div class="value">${rp(packCost())}</div></div></div>`}
+
+function biaya(){return head("Biaya Produksi Aktual","Masukkan bahan/material satu per satu. Total otomatis dihitung dari rincian, bukan dari angka rupiah tunggal.")
++`<div class="card"><div class="notice">Contoh: Kedelai 50 kg × Rp20.000 = Rp1.000.000. Gunakan <b>+ Tambah bahan</b> untuk material lain. Data yang disimpan otomatis digunakan pada dashboard, revenue, dan biaya bocor.</div>
+<div class="section"><h2>1. Material & Bahan</h2><div id="materials">${S.materials.map((x,i)=>materialRow(x,i)).join("")}</div><button class="btn secondary addline" onclick="addMaterial()">+ Tambah bahan</button></div>
+<div class="section"><h2>2. Kemasan</h2><div id="packaging">${S.packaging.map((x,i)=>packRow(x,i)).join("")}</div><button class="btn secondary addline" onclick="addPack()">+ Tambah kemasan</button></div>
+<div class="form section"><div class="field"><label>Biaya product reject</label><input id="rejectInput" type="number" value="${S.rejectCost}"></div><div class="field"><label>Periode</label><input id="costPeriod" value="${S.period}"></div></div>
+<button class="btn" onclick="saveCosts()">Simpan Biaya Produksi</button></div>
+<div class="card section"><h2>Ringkasan Biaya</h2><table><tr><th>Komponen</th><th>Total</th></tr><tr><td>Material</td><td>${rp(matCost())}</td></tr><tr><td>Kemasan</td><td>${rp(packCost())}</td></tr><tr><td>Energi</td><td>${rp(energyCost())}</td></tr><tr><td>Product reject</td><td>${rp(S.rejectCost)}</td></tr><tr><th>Total biaya produksi aktual</th><th>${rp(productionCost())}</th></tr></table></div>`}
+
+function materialRow(x,i){return `<div class="material-row"><div><label class="label">Nama bahan</label><input class="m-name" value="${x.name}"></div><div><label class="label">Jumlah</label><input class="m-qty" type="number" value="${x.qty}"></div><div><label class="label">Satuan</label><input class="m-unit" value="${x.unit}"></div><div><label class="label">Harga</label><input class="m-price" type="number" value="${x.price}"></div><button class="btn danger" onclick="this.parentElement.remove()">Hapus</button></div>`}
+function packRow(x,i){return `<div class="material-row"><div><label class="label">Nama kemasan</label><input class="p-name" value="${x.name}"></div><div><label class="label">Jumlah</label><input class="p-qty" type="number" value="${x.qty}"></div><div><label class="label">Satuan</label><input class="p-unit" value="${x.unit}"></div><div><label class="label">Harga</label><input class="p-price" type="number" value="${x.price}"></div><button class="btn danger" onclick="this.parentElement.remove()">Hapus</button></div>`}
+function addMaterial(){materials.insertAdjacentHTML("beforeend",materialRow({name:"",qty:1,unit:"pcs",price:0},0))}
+function addPack(){packaging.insertAdjacentHTML("beforeend",packRow({name:"",qty:1,unit:"pcs",price:0},0))}
+function saveCosts(){
+ S.materials=[...document.querySelectorAll("#materials .material-row")].map(r=>({name:r.querySelector(".m-name").value,qty:+r.querySelector(".m-qty").value||0,unit:r.querySelector(".m-unit").value,price:+r.querySelector(".m-price").value||0}));
+ S.packaging=[...document.querySelectorAll("#packaging .material-row")].map(r=>({name:r.querySelector(".p-name").value,qty:+r.querySelector(".p-qty").value||0,unit:r.querySelector(".p-unit").value,price:+r.querySelector(".p-price").value||0}));
+ S.rejectCost=+rejectInput.value||0;S.period=costPeriod.value||S.period;render("biaya")
+}
+
+function energi(){return head("Penggunaan Energi","Catat setiap sumber energi dan kegiatan/peralatannya. Data energi masuk otomatis ke biaya produksi dan biaya bocor.")
++`<div class="card"><div class="notice">Tidak hanya listrik. UMKM dapat mencatat listrik, kayu bakar, gas, BBM, atau sumber lain, lalu menghubungkannya dengan aktivitas seperti mesin produksi, perebusan, penggilingan, dan kompor.</div>
+<div class="form section"><div class="field"><label>Sumber energi</label><select id="e_source"><option>Listrik</option><option>Kayu bakar</option><option>Gas</option><option>BBM</option><option>Lainnya</option></select></div><div class="field"><label>Kegiatan/peralatan</label><select id="e_activity"><option>Mesin produksi</option><option>Perebusan</option><option>Penggilingan</option><option>Kompor</option><option>Lainnya</option></select></div><div class="field"><label>Jumlah penggunaan</label><input id="e_qty" type="number" value="1"></div><div class="field"><label>Satuan</label><input id="e_unit" value="kWh"></div><div class="field"><label>Harga per satuan</label><input id="e_rate" type="number" value="1500"></div></div><button class="btn" onclick="addEnergy()">+ Tambah penggunaan energi</button></div>
+<div class="card section"><h2>Histori Penggunaan Energi</h2><table><tr><th>Sumber</th><th>Kegiatan</th><th>Jumlah</th><th>Satuan</th><th>Biaya</th></tr>${S.energy.map(x=>`<tr><td>${x.source}</td><td>${x.activity}</td><td>${x.qty}</td><td>${x.unit}</td><td>${rp(x.qty*x.rate)}</td></tr>`).join("")}</table><div class="value">${rp(energyCost())}</div><div class="sub">Total energi otomatis masuk ke biaya produksi.</div></div>`}
+function addEnergy(){S.energy.push({source:e_source.value,activity:e_activity.value,qty:+e_qty.value||0,unit:e_unit.value,rate:+e_rate.value||0});render("energi")}
+
+function penjualan(){return head("Penjualan","Input jumlah yang terjual. Harga jual terhubung ke menu Revenue sehingga tidak perlu diinput ulang.")
++`<div class="card"><div class="form"><div class="field"><label>Periode</label><input id="s_period" value="${S.period}"></div><div class="field"><label>Produk</label><input value="${S.product}" disabled></div><div class="field"><label>Jumlah terjual (pcs)</label><input id="s_sold" type="number" value="${S.sold}"></div><div class="field"><label>Harga jual per pcs</label><input id="s_price" type="number" value="${S.price}"></div></div><button class="btn" onclick="saveSales()">Simpan Penjualan</button></div>
+<div class="card section"><h2>Rekonsiliasi</h2><table><tr><th>Aktual</th><th>Reject</th><th>Layak Jual</th><th>Terjual</th><th>Tidak Terjual</th></tr><tr><td>${S.actual}</td><td>${S.reject}</td><td>${good()}</td><td>${S.sold}</td><td><span class="warn">${unsold()}</span></td></tr></table></div>`}
+function saveSales(){S.period=s_period.value;S.sold=+s_sold.value||0;S.price=+s_price.value||0;S.sales.push(S.sold);render("penjualan")}
+
+function revenue(){return head("Revenue","Tidak ada input ulang. Revenue dihitung otomatis dari target, produk terjual, dan harga jual.")
++`<div class="grid three"><div class="card"><div class="label">Revenue Seharusnya</div><div class="value">${rp(revShould())}</div><div class="sub">${S.target} × ${rp(S.price)}</div></div><div class="card"><div class="label">Revenue Aktual</div><div class="value">${rp(revActual())}</div><div class="sub">${S.sold} × ${rp(S.price)}</div></div><div class="card"><div class="label">Revenue Gap</div><div class="value">${rp(revGap())}</div><div class="sub">Seharusnya − aktual</div></div></div>
+<div class="card section"><div class="notice">Revenue aktual <b>tidak otomatis</b> dihitung sebagai revenue seharusnya dikurangi biaya bocor. Keduanya metrik berbeda. Jika pemilik mencatat penerimaan kas yang berbeda dari hasil perhitungan, COSTLY perlu menampilkannya sebagai <b>selisih penerimaan</b>.</div></div>`}
+
+function bocor(){return head("Biaya Bocor","Rincian pemborosan produksi dipisahkan dari revenue gap dan produk tidak terjual.")
++`<div class="grid two"><div class="card"><h2>Rincian Biaya Bocor</h2><table><tr><th>Sumber</th><th>Nilai</th></tr><tr><td>Material</td><td>${rp(matCost())}</td></tr><tr><td>Product reject</td><td>${rp(S.rejectCost)}</td></tr><tr><td>Energi</td><td>${rp(energyCost())}</td></tr><tr><td>Kemasan</td><td>${rp(packCost())}</td></tr><tr><th>Total</th><th>${rp(productionCost())}</th></tr></table></div><div class="card"><h2>Dampak yang Perlu Dipisahkan</h2><div class="label">Revenue Gap</div><div class="value">${rp(revGap())}</div><div class="label section">Produk tidak terjual</div><div class="value">${unsold()} pcs</div><div class="sub">Tidak diklasifikasikan sebagai product reject.</div></div></div>`}
+
+function forecastPage(){return head("Detail Forecast","Histori penjualan menjadi dasar forecast dan referensi persiapan produksi periode berikutnya.")
++`<div class="grid two"><div class="card"><h2>Grafik Histori & Forecast</h2>${chart()}</div><div class="card"><div class="label">Forecast periode berikutnya</div><div class="value">${forecast()} pcs</div><div class="notice section">Model prototype: rata-rata histori penjualan. Forecast adalah referensi, bukan keputusan otomatis.</div><div class="section"><h2>Hubungan ke Produksi</h2><div class="sub">Pemilik dapat menggunakan angka forecast sebagai pertimbangan target produksi minggu/bulan berikutnya.</div></div></div></div>`}
+
+function rekomendasi(){let a=[];if(S.reject>0)a.push(["Product Reject",`Terdapat ${S.reject} pcs reject. Periksa penyebab reject pada histori produksi.`]);if(unsold()>0)a.push(["Produk Tidak Terjual",`${unsold()} pcs belum terjual. Bandingkan dengan forecast sebelum menetapkan target produksi.`]);if(energyCost()>0)a.push(["Energi",`Total penggunaan energi tercatat ${rp(energyCost())}. Periksa sumber/kegiatan dengan biaya terbesar.`]);a.push(["Material",`Total material ${rp(matCost())}. Pastikan bahan dan jumlah pada Biaya Produksi Aktual sesuai catatan usaha.`]);return head("Rekomendasi","Saran diambil dari data yang sudah diinput sehingga pengguna tidak perlu mengisi ulang.")+a.map(x=>`<div class="card section"><span class="pill">${x[0]}</span><h2 style="margin-top:10px">${x[1]}</h2></div>`).join("")}
+
+function simulasi(){return head("Simulasi","Uji perubahan target dan harga jual tanpa mengubah data aktual.")
++`<div class="card"><div class="form"><div class="field"><label>Target produksi skenario</label><input id="sim_t" type="number" value="${S.target}"></div><div class="field"><label>Harga jual skenario</label><input id="sim_p" type="number" value="${S.price}"></div></div><button class="btn" onclick="runSim()">Hitung Simulasi</button><div id="sim_out" class="section"></div></div>`}
+function runSim(){sim_out.innerHTML=`<div class="grid three"><div><div class="label">Revenue skenario</div><div class="value">${rp((+sim_t.value)*(+sim_p.value))}</div></div><div><div class="label">Forecast</div><div class="value">${forecast()} pcs</div></div><div><div class="label">Selisih target vs forecast</div><div class="value">${(+sim_t.value-forecast())} pcs</div></div></div>`}
+
+const pages={dashboard,biaya,energi,penjualan,revenue,bocor,forecast:forecastPage,rekomendasi,simulasi};
+function render(p){main.innerHTML=pages[p]();document.querySelectorAll(".nav button[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===p))}
+document.querySelectorAll(".nav button[data-page]").forEach(b=>b.addEventListener("click",()=>render(b.dataset.page)));
+</script>
+</body></html>
